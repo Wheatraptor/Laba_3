@@ -1,6 +1,5 @@
 #include "klassick.h"
+//#include "strochechka.cpp"
 
 void main() {
-	Tstring s1;
-	Tstring s2
 }
