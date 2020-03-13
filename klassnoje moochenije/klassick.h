@@ -1,4 +1,8 @@
 #pragma once
+#include <iostream> 
+#include <algorithm>
+#include "cstring"
+using namespace std;
 
 class Tstring {
 protected:
@@ -16,6 +20,6 @@ public:
 	void print();
 	void resize(int n_);
 	int find(Tstring& s);
-	int findchar(char i);
+	int findchar(char c);
 	void pushback(char c);
 };
