@@ -37,6 +37,7 @@ void Tstring::resize(int n_) {
 	res[n_ - 1] = 0;
 	delete[]arr;
 	arr = res;
+	n = n_;
 }
 
 Tstring Tstring::sum(Tstring& b) {
@@ -45,21 +46,14 @@ Tstring Tstring::sum(Tstring& b) {
 	for (int i = 0; i < n - 1; i++)
 		a.arr[i] = arr[i];
 	a.arr[n - 1] = 0;
-	//a.print();			Тут все нормально
-	//b.print();			И тут тоже
-	for (int i = 0; i < b.n - 1; i++) {
-		//std::cout << b.arr[i] << std::endl;			И тут!
+	for (int i = 0; i < b.n - 1; i++)
 		a.arr[i + n - 1] = b.arr[i];
-		//a.print();			Все чисто...
-	}
-	a.print();
-	cout << a.arr;
 	return a;
 }
 
 char& Tstring::getchar(int i) {
-	if (i >= 0 && i < n)
-		return arr[i];
+	if (i > 0 && i < n)
+		return arr[i - 1];
 }
 
 void Tstring::print() {
@@ -83,8 +77,7 @@ int Tstring::find(Tstring& s) {
 			}
 		}
 		if (m == false)
-			return i;
-
+			return i + 1;
 	}
 	return -1;
 }
